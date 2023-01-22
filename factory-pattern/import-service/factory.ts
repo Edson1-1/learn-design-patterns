@@ -1,6 +1,6 @@
 import { IImport } from "./import.interface";
 import { HubspotImport } from "./hubspot";
-import { CsvImport } from "./csv";
+import { IntercomImport } from "./intercom";
 import { BaseImport } from "./base";
 
 export class ImportFactory {
@@ -9,7 +9,7 @@ export class ImportFactory {
         switch(importer) {
             case 'hubspot': return new HubspotImport();
 
-            case 'csv': return new CsvImport();
+            case 'intercom': return new IntercomImport();
 
             default: return new BaseImport();
         }

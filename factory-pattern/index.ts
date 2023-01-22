@@ -1,31 +1,14 @@
-import { ImportFactory } from "./import-service/factory";
-import { IDataDTO } from "./import-service/import.interface";
 
+import { importData } from "./import-service";
 
-
-
-const importData = (source: string): IDataDTO => {
-
-    const importer = new ImportFactory().createImporter(source);
-
-    const data: IDataDTO = importer.import();
-    importer.print();
-
-    return data;
-
-}
-
-
-
-
-
-console.log('------ calling CSV importer --------');
-let data:IDataDTO = importData('csv');
+console.log('------ calling Intercom importer --------');
+let data = importData('intercom');
 
 console.log('------ calling Hubspot importer --------');
 data = importData('hubspot');
 
 
 
-console.log('------ calling Random importer --------');
-data = importData('xysy');
+console.log('------ calling CSV importer --------'); 
+// we dont have an implementation for that but it will return an empty object
+data = importData('csv');

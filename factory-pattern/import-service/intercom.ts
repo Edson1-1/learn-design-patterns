@@ -1,6 +1,6 @@
 import { IDataDTO, IImport } from "./import.interface";
 
-export class CsvImport implements IImport {
+export class IntercomImport implements IImport {
 
     data: IDataDTO = {
         name: '',
@@ -9,14 +9,14 @@ export class CsvImport implements IImport {
 
     import(): IDataDTO {
         const importedData: IDataDTO = {
-            name: 'csv',
-            email: 'csv@emai.com'
+            name: 'intercom',
+            email: 'intercom@emai.com'
         }
         this.data = importedData;
         return importedData;
     }
     print(): void {
-        console.log('imported csv data => : ', this.data);
+        console.log('imported intercom data => : ', this.data);
     }
 
 
